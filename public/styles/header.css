@@ -1,0 +1,10 @@
+header {
+display : flex;  
+height : 500px;
+background-color:bisque;
+background-image: url(/images/background.png);
+padding-top: 6.0em;
+align-items: Center;
+justify-content: center;
+flex-direction: column;
+}
