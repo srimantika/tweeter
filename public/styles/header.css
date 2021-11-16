@@ -1,8 +1,8 @@
 header {
 display : flex;  
 height : 500px;
-background-color:bisque;
-background-image: url(/images/background.png);
+background-color: #00b4f5;
+background-image: url("https://www.transparenttextures.com/patterns/black-felt.png");
 padding-top: 6.0em;
 align-items: Center;
 justify-content: center;
