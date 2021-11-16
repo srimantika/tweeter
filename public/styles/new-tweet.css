@@ -1,4 +1,4 @@
-container {
+.container {
   display:none;
   border: .5px solid black;
   border-radius: 10px;
@@ -8,6 +8,7 @@ container {
   width:70%;
   background-color: #eee;
 }
+
 
 button {
   color:#FFFFFF;
@@ -27,7 +28,8 @@ h6 {
   float:left;
 }
 
-textarea {
+
+.textArea {
   width: 95%;
   border: none;
   background: none;
