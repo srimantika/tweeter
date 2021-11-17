@@ -13,3 +13,11 @@ $(document).ready(function() {
     }
   });
 });
+
+
+$(document).ready(function() {
+  const $retweet = $("#retweet")
+  $retweet.on('mouseover', (event) => {
+  document.getElementById("retweet").style.color = "red"
+});
+});
