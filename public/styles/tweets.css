@@ -1,0 +1,45 @@
+.tweets {  
+border-style: solid;
+margin-top: 4em;
+margin-bottom: 2em;
+margin-left: 1em;
+margin-right:1em;
+height: 225px;
+width: 95%;
+}
+
+.tweets h3{
+display:flex;
+justify-content: flex-start;  
+Margin-left: 1em;
+text-align: center;
+}
+
+.tweets span {
+ 
+font-family: sans-serif;
+position: absolute; 
+top: 10;
+right: 0; 
+width: 200px; 
+text-align:right;
+Margin-right: 2em;
+font-weight: lighter;
+}
+
+.tweets p {
+border-bottom: 4px solid;
+width : 95%;
+margin-left: 1em;
+margin-right: 3em;
+}
+
+.tweets div {
+  margin-left: 1em;
+}
+
+.tweets i{
+  color:#4056A1;
+  float:right;
+  margin-right: 1em;
+}

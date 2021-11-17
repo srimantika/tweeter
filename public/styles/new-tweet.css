@@ -1,13 +1,11 @@
 new-tweet {
-  display:none;
-  border: .5px solid black;
-  border-radius: 10px;
-  padding: 0px 10px 30px 10px;
   margin:auto;
   margin-top:34px;
   width:70%;
   background-color: #eee;
 }
+
+
 
 
 .new-tweet button {
@@ -38,7 +36,7 @@ new-tweet {
   margin-bottom: 1.0em;
   border-bottom: 4px solid;
   font-weight: bold;
-}
+} 
 
 .counter {
 float:right;
