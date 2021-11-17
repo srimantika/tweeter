@@ -7,67 +7,80 @@
  */
 
 $(document).ready(function() {
-  const tweetObject = {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
+
+  const data = [
+    {
+      "user": {
+        "name": "Newton",
+        "avatars": "https://i.imgur.com/73hZDYK.png"
+        ,
+        "handle": "@SirIsaac"
+      },
+      "content": {
+        "text": "If I have seen further it is by standing on the shoulders of giants"
+      },
+      "created_at": 1461116232227
     },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1636997380182
-  }
+    {
+      "user": {
+        "name": "Descartes",
+        "avatars": "https://i.imgur.com/nlhLi3I.png",
+        "handle": "@rd" },
+      "content": {
+        "text": "Je pense , donc je suis"
+      },
+      "created_at": 1461113959088
+    }
+  ]
   
   function createTweetElement(tweetObject) {
-    time = timeago.format(tweetObject.created_at);
-  const $tweet = $(`<h3><img src=${tweetObject.user.avatars}> ${tweetObject.user.name} <span>${tweetObject.user.handle}</span></h3><p>${tweetObject.content.text}</p> <div>${time}  <i id = "retweet" class="fa-solid fa-retweet"></i> <i id = "heart" class="fa-solid fa-heart"></i> <i id = "flag" class="fa-solid fa-flag"></i></div>`);
-  return $tweet;    
+    const $tweet = $(`
+    <article class="tweet">
+      <div class="tweet-header">
+        <div class="tweet-header-name">  
+          <img src=${tweetObject.user.avatars}/> 
+          <p class="tweet-header-username">${tweetObject.user.name}</p> 
+        </div> 
+        <p class="tweet-header-handle">
+          ${tweetObject.user.handle}
+        </p>
+      </div>
+      <div class="tweet-main">
+        ${tweetObject.content.text}
+      </div> 
+      <div class="tweet-footer">
+        <p class="tweet-footer-timestamp">${timeago.format(tweetObject.created_at)}</p>
+        <div class="tweet-footer-icons">  
+          <i class="fa-solid fa-retweet"></i> 
+          <i class="fa-solid fa-heart"></i> 
+          <i class="fa-solid fa-flag"></i>
+        </div>
+      </div>
+    </article>`);
+
+    return $tweet;    
   }
 
-
-    $('#tweetdisplay').html(createTweetElement(tweetObject));
-
-
-
-
-
-
-
-
-
-
-  //--------------------------------------------------------------------------------------
-// Code for box shadow and color change on mouse hover  
-  const $tweets = $("#tweets")
-  $tweets.on('mouseover', (event) => {
-  document.getElementById("tweets").style.boxShadow = "10px 20px 30px"
-  });
-  $tweets.on('mouseleave', (event) => {
-    document.getElementById("tweets").style.boxShadow = "None"
+  function loadTweets() {
+    $.ajax({
+      url: "/tweets",
+      method: "GET",
+      data: $(".submit-tweet").serialize(),
+      dataType: "json",
+      success: function (data) {
+        renderTweets(data);
+      }
     });
+  }
+  loadTweets();
 
-  const $retweet = $("#retweet")
-  $retweet.on('mouseover', (event) => {
-  document.getElementById("retweet").style.color = "#FFD700"
-  });
-  $retweet.on('mouseleave', (event) => {
-  document.getElementById("retweet").style.color = "#4056A1"
-  });
+  function renderTweets(tweetsArray) {
+    for (let value of tweetsArray) {
+      const $tweet = createTweetElement(value);
+      $('#tweets-container').prepend($tweet);
+    }
+  }
+ 
 
-  const $heart = $("#heart")
-  $heart.on('mouseover', (event) => {
-  document.getElementById("heart").style.color = "#FFD700"
-  });
-  $heart.on('mouseleave', (event) => {
-  document.getElementById("heart").style.color = "#4056A1"
-  });
 
-  const $flag = $("#flag")
-  $flag.on('mouseover', (event) => {
-  document.getElementById("flag").style.color = "#FFD700"
-  });
-  $flag.on('mouseleave', (event) => {
-  document.getElementById("flag").style.color = "#4056A1"
-  });
 });

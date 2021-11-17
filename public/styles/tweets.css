@@ -1,47 +1,66 @@
-#tweetdisplay {  
-border-style: solid;
-margin-top: 4em;
-margin-bottom: 2em;
-margin-left: 1em;
-margin-right:1em;
-height: 250px;
-width: 95%;
-}
+/*<article class="tweet">
+<div class="tweet-header">
+  <div class="tweet-header-name">  
+    <img src=${tweetObject.user.avatars}/> 
+    <p class="tweet-header-username">${tweetObject.user.name}</p> 
+  </div> 
+  <p class="tweet-header-handle">
+    ${tweetObject.user.handle}
+  </p>
+</div>
+<div class="tweet-main">
+  ${tweetObject.content.text}
+</div> 
+<div class="tweet-footer">
+  <p class="tweet-footer-timestamp">${time}</p>
+  <div class="tweet-footer-icons">  
+    <i class="fa-solid fa-retweet"></i> 
+    <i class="fa-solid fa-heart"></i> 
+    <i class="fa-solid fa-flag"></i>
+  </div>
+</div>
+</article>`);*/
 
-#tweetdisplay h3{
-display:flex;
-justify-content: flex-start;  
-Margin-left: 1em;
-text-align: center;
-}
-
-#tweetdisplay span {
- 
-font-family: sans-serif;
-position: absolute; 
-top: 10;
-right: 0; 
-width: 200px; 
-text-align:right;
-Margin-right: 2em;
-font-weight: lighter;
-color :lightgray;
-}
-
-#tweetdisplay p {
-border-bottom: 4px solid;
-width : 95%;
-margin-left: 1em;
-margin-right: 3em;
-}
-
-#tweetdisplay div {
+#tweets-container {  
+  margin-top: 4em;
+  margin-bottom: 2em;
   margin-left: 1em;
+  margin-right:1em;
+  width: 95%;
 }
 
-#tweetdisplay i{
-  color:#4056A1;
-  float:right;
-  margin-right: 1em;
+.tweet {
+  border:2px solid black;
+  margin: 1em 0;
+  padding: 1em;
+}
+
+.tweet:hover{
+  box-shadow: 2px 2px 2px black;
+}
+
+.tweet-header,.tweet-header-name, .tweet-footer {
+display:flex;
+justify-content: space-between; 
+align-items: center; 
+}
+
+
+.tweet-header-username, .tweet-header-handle {
+font-style: italic; 
+}
+
+.tweet-main {
+  border-bottom: 2px solid black;
+  padding: 1em 0;
+}
+
+.tweet-footer-icons {
+  color: lightskyblue;
+}
+
+.tweet-footer-icons i:hover{
+color :gold;
+text-shadow: 2px 2px 2px black;
 }
 
