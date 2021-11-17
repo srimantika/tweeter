@@ -18,9 +18,10 @@ $(document).ready(function() {
     },
     "created_at": 1636997380182
   }
-
- function createTweetElement(tweetObject) {
-  const $tweet = $(`<h3><img src=${tweetObject.user.avatars}> ${tweetObject.user.name} <span>${tweetObject.user.handle}</span></h3><p>${tweetObject.content.text}</p> <div>10 days ago  <i id = "retweet" class="fa-solid fa-retweet"></i> <i id = "heart" class="fa-solid fa-heart"></i> <i id = "flag" class="fa-solid fa-flag"></i></div>`);
+  
+  function createTweetElement(tweetObject) {
+    time = timeago.format(tweetObject.created_at);
+  const $tweet = $(`<h3><img src=${tweetObject.user.avatars}> ${tweetObject.user.name} <span>${tweetObject.user.handle}</span></h3><p>${tweetObject.content.text}</p> <div>${time}  <i id = "retweet" class="fa-solid fa-retweet"></i> <i id = "heart" class="fa-solid fa-heart"></i> <i id = "flag" class="fa-solid fa-flag"></i></div>`);
   return $tweet;    
   }
 
