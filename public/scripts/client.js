@@ -40,7 +40,7 @@ $(document).ready(function() {
     return $tweet;    
   }
 
-//Escape function to avoid cross scripting issues
+//Escape function to avoid cross scripting issue
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
