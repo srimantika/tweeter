@@ -4,7 +4,12 @@ Tweeter is a simple, single-page Twitter clone.
 
 # Screenshots
 
+Tweeter - Single Page Twitter Clone
+
 !["Single Page Twitter clone"](https://github.com/srimantika/tweeter/blob/master/docs/Tweeter_SinglePage_App.png?raw=true)
+
+Mobile & Tablet View of Tweeter
+
 !["Single Page Twitter clone on Mobile"](https://github.com/srimantika/tweeter/blob/master/docs/Mobile_Tablet_view_of_Tweeter.png?raw=true)
 
 
