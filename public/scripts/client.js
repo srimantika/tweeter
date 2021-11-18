@@ -10,7 +10,7 @@ $(document).ready(function() {
 
   const data = [];
 
-   
+//Created the tweet in proper formatting to be rendered on page   
   function createTweetElement(tweetObject) {
     const $tweet = $(`
     <article class="tweet">
@@ -36,17 +36,19 @@ $(document).ready(function() {
       </div>
     </article>`);
 
+    $("<p>").text(tweetObject.user.name);
+    $("<p>").text(tweetObject.user.handle);
+    $("<div>").text(tweetObject.content.text);
+
     return $tweet;    
   }
 
 
-
+// Submit a new tweet after validation on empty tweet and input length
   $( ".submit-tweet" ).submit(function( event ) {
     event.preventDefault();
-
     let inputLength = $("textArea").val().length;
-    console.log(inputLength);
-    if(inputLength === 0 || inputLength === null || inputLength > 140) {
+    if(inputLength === 0 || inputLength > 140) {
       $(".error-container").slideDown();
       $(".error-message").html("<h5>Error: Please enter a valid tweet!</h5>");
     } else {
@@ -54,11 +56,13 @@ $(document).ready(function() {
       const tweetContent = $(".submit-tweet").serialize();
       $.post("/tweets", tweetContent, function () {
       $("textArea").val("");
+      $(".counter").val("140");
       loadTweets();
     })
   }
   }); 
 
+  //load tweets dynamically using AJAX
   function loadTweets() {
     $.ajax({
       url: "/tweets",
@@ -72,7 +76,7 @@ $(document).ready(function() {
     });
   }
   loadTweets ();
-
+ // Render Tweets from the data array of tweet objects
   function renderTweets(tweetsArray) {
     for (let value of tweetsArray) {
       const $tweet = createTweetElement(value);
