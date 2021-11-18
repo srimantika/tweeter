@@ -24,7 +24,7 @@ $(document).ready(function() {
         </p>
       </div>
       <div class="tweet-main">
-        ${escape(tweetObject.content.text)}
+        ${escape(tweetObject.content.text.replace(/(\w{40})(?=\w)/g, '$1 '))}
       </div> 
       <div class="tweet-footer">
         <p class="tweet-footer-timestamp">${timeago.format(tweetObject.created_at)}</p>
@@ -39,7 +39,7 @@ $(document).ready(function() {
 
     return $tweet;    
   }
-  
+
 //Escape function to avoid cross scripting
   const escape = function (str) {
     let div = document.createElement("div");

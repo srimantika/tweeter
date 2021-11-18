@@ -3,8 +3,8 @@ display : flex;
 height : 500px;
 background-color: #00b4f5;
 background-image: url("https://www.transparenttextures.com/patterns/black-felt.png");
-padding-top: 6.0em;
-align-items: Center;
+padding-top: 3.0em;
+align-items: center;
 justify-content: center;
 flex-direction: column;
 }

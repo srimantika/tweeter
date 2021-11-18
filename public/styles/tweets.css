@@ -30,6 +30,7 @@ font-style: italic;
 }
 
 .tweet-main {
+  width : 95%;
   border-bottom: 2px solid black;
   padding: 1em 0;
   word-wrap: break-word;

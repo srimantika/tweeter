@@ -16,6 +16,8 @@ html {
  */
 
 body {
+  display: flex;
+  flex-direction: column;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
@@ -29,5 +31,32 @@ body {
  main {
   width:90%;
   margin:auto;
-  background-color: white;
+  
  }
+
+ @media only screen and (min-width : 1024px){
+
+body {
+  flex-direction: row;
+}
+
+header {
+  display:flex;
+  align-items: center;
+  margin-left: 5em;
+  margin-right: 5em;
+  margin-top: 6em; 
+  padding-left: 3em;
+  padding-right: 3em;
+}
+
+main {
+  margin : 5em;
+}
+ }
+   
+ 
+
+
+
+
