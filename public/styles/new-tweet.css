@@ -36,14 +36,15 @@ new-tweet {
 } 
 
 .counter {
-float:right;
-font-weight: bold;
-margin-right: 1.8em;
+  float:right;
+  font-weight: bold;
+  margin-right: 1.8em;
 }
 
 
 .error-message {
-text-align: center;  
-font:100;
-color: red;
+  padding-top: 1em; 
+  padding-left: 1em;
+  font: lighter;
+  color: red;
 }

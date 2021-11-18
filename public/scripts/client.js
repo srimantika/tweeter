@@ -50,18 +50,18 @@ $(document).ready(function() {
 // Submit a new tweet after validation on empty tweet and input length
   $( ".submit-tweet" ).submit(function( event ) {
     event.preventDefault();
-    let inputLength = $("textArea").val().length;
-    if(inputLength === 0 || inputLength > 140) {
-      $(".error-container").slideDown();
-      $(".error-message").html("<h5>Error: Please enter a valid tweet!</h5>");
-    } else {
-      $(".error-container").slideUp();  
-      const tweetContent = $(".submit-tweet").serialize();
-      $.post("/tweets", tweetContent, function () {
-      $("textArea").val("");
-      $(".counter").val("140");
-      loadTweets();
-    })
+      let inputLength = $("textArea").val().length;
+      if(inputLength === 0 || inputLength > 140) {
+        $(".error-container").slideDown();
+        $(".error-message").html("<h5>Please enter a valid tweet!</h5>");
+      } else {
+        $(".error-container").slideUp();  
+        const tweetContent = $(".submit-tweet").serialize();
+        $.post("/tweets", tweetContent, function () {
+        $("textArea").val("");
+        $(".counter").val("140");
+        loadTweets();
+      })
   }
   }); 
 

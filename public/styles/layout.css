@@ -36,23 +36,23 @@ body {
 
  @media only screen and (min-width : 1024px){
 
-body {
-  flex-direction: row;
-}
+  body {
+    flex-direction: row;
+  }
 
-header {
-  display:flex;
-  align-items: center;
-  margin-left: 5em;
-  margin-right: 5em;
-  margin-top: 6em; 
-  padding-left: 3em;
-  padding-right: 3em;
-}
+  header {
+    display:flex;
+    align-items: center;
+    margin-left: 5em;
+    margin-right: 5em;
+    margin-top: 6em; 
+    padding-left: 3em;
+    padding-right: 3em;
+  }
 
-main {
-  margin : 5em;
-}
+  main {
+    margin : 5em;
+  }
  }
    
  
