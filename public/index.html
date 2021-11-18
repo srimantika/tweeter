@@ -57,7 +57,10 @@
         <h2><b>Amy</b> Mansell</h2>
       </div>
     </header>
-
+    <!-- Error message container.-->
+      <div class="error-container">
+        <p class="error-message"></p>
+      </div>
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
@@ -65,12 +68,14 @@
         <form class = "submit-tweet" action="/tweets" method="post">
           <textarea autofocus class="textArea" name="text" placeholder="What are you humming about?"></textarea>
           <div>
-            <button type="submit">Tweet</button>
+            <button id = "submit-tweet" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+
       </section>
       <section id="tweets-container"></section>
+
     </main>
     <script type ="text/javascript" src = "/scripts/composer-char-counter.js" ></script>
     <script type ="text/javascript" src = "/scripts/client.js" ></script>

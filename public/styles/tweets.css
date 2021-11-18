@@ -1,25 +1,4 @@
-/*<article class="tweet">
-<div class="tweet-header">
-  <div class="tweet-header-name">  
-    <img src=${tweetObject.user.avatars}/> 
-    <p class="tweet-header-username">${tweetObject.user.name}</p> 
-  </div> 
-  <p class="tweet-header-handle">
-    ${tweetObject.user.handle}
-  </p>
-</div>
-<div class="tweet-main">
-  ${tweetObject.content.text}
-</div> 
-<div class="tweet-footer">
-  <p class="tweet-footer-timestamp">${time}</p>
-  <div class="tweet-footer-icons">  
-    <i class="fa-solid fa-retweet"></i> 
-    <i class="fa-solid fa-heart"></i> 
-    <i class="fa-solid fa-flag"></i>
-  </div>
-</div>
-</article>`);*/
+
 
 #tweets-container {  
   margin-top: 4em;
@@ -53,6 +32,7 @@ font-style: italic;
 .tweet-main {
   border-bottom: 2px solid black;
   padding: 1em 0;
+  word-wrap: break-word;
 }
 
 .tweet-footer-icons {
