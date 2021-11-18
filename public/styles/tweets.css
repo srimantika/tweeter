@@ -19,15 +19,21 @@
 }
 
 .tweet-header,.tweet-header-name, .tweet-footer {
-display:flex;
-justify-content: space-between; 
-align-items: center; 
+  display:flex;
+  justify-content: space-between; 
+  align-items: center; 
 }
 
 
-.tweet-header-username, .tweet-header-handle {
-font-style: italic; 
+.tweet-header-username {
+  font-style: normal;
 }
+
+.tweet-header-handle {
+  font-size: 0.8cm;
+  color: lightgray;
+  font : bold;
+}  
 
 .tweet-main {
   width : 95%;
@@ -41,7 +47,7 @@ font-style: italic;
 }
 
 .tweet-footer-icons i:hover{
-color :gold;
-text-shadow: 2px 2px 2px black;
+  color :gold;
+  text-shadow: 2px 2px 2px black;
 }
 
