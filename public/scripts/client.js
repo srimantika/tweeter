@@ -66,10 +66,12 @@ $(document).ready(function() {
       data: $(".submit-tweet").serialize(),
       dataType: "json",
       success: function (data) {
+        $('#tweets-container').empty(); 
         renderTweets(data);
       }
     });
   }
+  loadTweets ();
 
   function renderTweets(tweetsArray) {
     for (let value of tweetsArray) {
@@ -77,5 +79,6 @@ $(document).ready(function() {
       $('#tweets-container').prepend($tweet);
     }
   }
+
 
 });
