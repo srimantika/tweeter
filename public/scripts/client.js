@@ -61,6 +61,8 @@ $(document).ready(function() {
     return $tweet;    
   }
 
+
+
   function loadTweets() {
     $.ajax({
       url: "/tweets",
@@ -73,6 +75,12 @@ $(document).ready(function() {
     });
   }
   loadTweets();
+
+  $( ".submit-tweet" ).submit(function( event ) {
+    alert( "Handler for .submit() called." );
+    event.preventDefault();
+    loadTweets();
+  });
 
   function renderTweets(tweetsArray) {
     for (let value of tweetsArray) {
