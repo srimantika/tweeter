@@ -24,7 +24,7 @@ $(document).ready(function() {
         </p>
       </div>
       <div class="tweet-main">
-        ${tweetObject.content.text}
+        ${escape(tweetObject.content.text)}
       </div> 
       <div class="tweet-footer">
         <p class="tweet-footer-timestamp">${timeago.format(tweetObject.created_at)}</p>
@@ -36,13 +36,16 @@ $(document).ready(function() {
       </div>
     </article>`);
 
-    $("<p>").text(tweetObject.user.name);
-    $("<p>").text(tweetObject.user.handle);
-    $("<div>").text(tweetObject.content.text);
 
     return $tweet;    
   }
-
+  
+//Escape function to avoid cross scripting
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
 
 // Submit a new tweet after validation on empty tweet and input length
   $( ".submit-tweet" ).submit(function( event ) {
