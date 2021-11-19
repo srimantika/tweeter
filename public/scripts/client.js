@@ -51,10 +51,15 @@ $(document).ready(function() {
   $( ".submit-tweet" ).submit(function( event ) {
     event.preventDefault();
       let inputLength = $("textArea").val().length;
-      if(inputLength === 0 || inputLength > 140) {
+      if(inputLength === 0 ) {
         $(".error-container").slideDown();
         $(".error-message").html("<h5>Please enter a valid tweet!</h5>");
-      } else {
+      } 
+      else if(inputLength > 140) {
+        $(".error-container").slideDown();
+        $(".error-message").html("<h5>Please enter a valid tweet of less than 140 character!</h5>");
+      }
+      else {
         $(".error-container").slideUp();  
         const tweetContent = $(".submit-tweet").serialize();
         $.post("/tweets", tweetContent, function () {
